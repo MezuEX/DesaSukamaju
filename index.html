@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/bootstrap-5.3.7-dist/css/bootstrap.min.css" />
+    <link href="/aos-master/dist/aos.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+    <title>project</title>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      .selector-for-some-widget {
+        box-sizing: content-box;
+      }
+
+      .carousel-item img {
+        height: 500px;
+        object-fit: cover;
+      }
+
+      .text-shadow {
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+      }
+
+      .carousel-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.3);
+        z-index: 1;
+      }
+
+      .carousel-caption-custom {
+        z-index: 2;
+      }
+
+      .btn-success:hover {
+        background-color: #218838;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        transition: 0.3s ease;
+      }
+
+      .hover-zoom {
+        transition: transform 0.4s ease;
+      }
+
+      .hover-zoom:hover {
+        transform: scale(1.05);
+      }
+
+      footer .whatsapp:hover {
+        color: #28a745 !important;
+        transition: 0.3s;
+      }
+
+      footer .instagram:hover {
+        color: #ff00ff !important;
+        transition: 0.3s;
+      }
+
+      footer .facebook:hover {
+        color: #0004ff !important;
+        transition: 0.3s;
+      }
+    </style>
+  </head>
+  <body>
+    <!--nav bar start-->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"><i class="fa-solid fa-tree me-2"></i>Desa Kami</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Beranda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">Tentang Desa</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Others
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#data">Data Desa</a></li>
+                <li><a class="dropdown-item" href="#gallery">Galeri</a></li>
+                <li><a class="dropdown-item" href="#contact">Kontak</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#report">Ada kesalahan</a></li>
+              </ul>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <!--Nav Bar End-->
+
+    <!--Carousel start-->
+    <div id="carouselExampleFade" class="carousel slide carousel-fade mt-1 position-relative">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="/assets/fotodesa1.jpg" class="d-block w-100" alt="foto desa 1" />
+        </div>
+        <div class="carousel-item">
+          <img src="/assets/fotodesa2.jpg" class="d-block w-100" alt="foto desa 2" />
+        </div>
+        <div class="carousel-item">
+          <img src="/assets/fotodesa3.jpg" class="d-block w-100" alt="foto desa 3" />
+        </div>
+      </div>
+
+      <!-- Overlay gelap -->
+      <div class="carousel-overlay"></div>
+
+      <!-- Teks dan tombol -->
+      <div class="position-absolute top-50 start-50 translate-middle text-center text-white carousel-caption-custom">
+        <h1 class="fw-bold text-shadow">Selamat Datang di Sukamaju</h1>
+        <p class="mb-3">Alam yang asri, budaya yang lestari</p>
+        <a href="#about" class="btn btn-success hover-zoom px-4 py-2 fw-semibold shadow">Jelajahi Desa</a>
+      </div>
+
+      <!-- Tombol carousel -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <!--Carousel end-->
+
+    <!--Tentang Desa start-->
+    <div id="about" class="container my-5">
+      <h2 class="text-center mb-4">Tentang Desa Kami</h2>
+      <div class="row align-items-center">
+        <div class="col-md-4" data-aos="fade-up" data-aos-duration="1000">
+          <img src="/assets/tentang.jpg" alt="Tentang desa" class="img-fluid rounded shadow hover-zoom" />
+        </div>
+        <div class="col-md-8" data-aos="zoom-in-up" data-aos-duration="1000">
+          <p>
+            <strong>Desa Sukamaju</strong> adalah sebuah desa fiktif yang terletak di kaki Gunung Arjuna, dikelilingi oleh hamparan sawah hijau dan sungai yang jernih. Masyarakatnya hidup harmonis, menjunjung tinggi nilai kebersamaan dan kearifan lokal.
+          </p>
+          <p>
+            Desa ini dikenal dengan potensi pertaniannya, terutama dalam budidaya padi organik dan kopi pegunungan. Selain itu, kerajinan tangan seperti anyaman bambu dan batik tulis menjadi warisan budaya yang terus dilestarikan.
+          </p>
+          <p>
+            Setiap tahun, Desa Sukamaju mengadakan <em>Festival Panen Raya</em> yang menjadi daya tarik wisatawan dari berbagai daerah. Dengan udara sejuk, pemandangan asri, dan keramahan penduduknya, desa ini adalah gambaran sempurna kehidupan yang damai dan penuh makna.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- Tentang Desa end-->
+
+
+    <!--Footer-->
+    <footer class="bg-dark text-light text-center py-3 mt-5">
+      <p class="mb-1">&copy; 2025 Desa Kami. All rights reserved.</p>
+      <p class="mb-0">
+        <a href="#" class="text-light me-3 facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="text-light me-3 instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="text-light whatsapp"><i class="fab fa-whatsapp"></i></a>
+      </p>
+    </footer>
+
+    <!--Bootstrap & aos Script-->
+    <script src="/bootstrap-5.3.7-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/aos-master/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>
