@@ -3,17 +3,20 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="bootstrap-5.3.7-dist/css/bootstrap.min.css" />
-    <link href="aos-master/dist/aos.css" rel="stylesheet">
+
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- AOS CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <!-- Font Awesome CDN -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
-    <title>project</title>
+
+    <title>Desa Sukamaju</title>
     <style>
       html {
         scroll-behavior: smooth;
-      }
-
-      .selector-for-some-widget {
-        box-sizing: content-box;
       }
 
       .carousel-item img {
@@ -70,7 +73,7 @@
     </style>
   </head>
   <body>
-    <!--nav bar start-->
+    <!-- NavBar -->
     <nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
       <div class="container-fluid">
         <a class="navbar-brand" href="#"><i class="fa-solid fa-tree me-2"></i>Desa Kami</a>
@@ -108,9 +111,8 @@
         </div>
       </div>
     </nav>
-    <!--Nav Bar End-->
 
-    <!--Carousel start-->
+    <!-- Carousel -->
     <div id="carouselExampleFade" class="carousel slide carousel-fade mt-1 position-relative">
       <div class="carousel-inner">
         <div class="carousel-item active">
@@ -124,17 +126,14 @@
         </div>
       </div>
 
-      <!-- Overlay gelap -->
       <div class="carousel-overlay"></div>
 
-      <!-- Teks dan tombol -->
       <div class="position-absolute top-50 start-50 translate-middle text-center text-white carousel-caption-custom">
         <h1 class="fw-bold text-shadow">Selamat Datang di Sukamaju</h1>
         <p class="mb-3">Alam yang asri, budaya yang lestari</p>
         <a href="#about" class="btn btn-success hover-zoom px-4 py-2 fw-semibold shadow">Jelajahi Desa</a>
       </div>
 
-      <!-- Tombol carousel -->
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
@@ -144,9 +143,8 @@
         <span class="visually-hidden">Next</span>
       </button>
     </div>
-    <!--Carousel end-->
 
-    <!--Tentang Desa start-->
+    <!-- Tentang Desa -->
     <div id="about" class="container my-5">
       <h2 class="text-center mb-4">Tentang Desa Kami</h2>
       <div class="row align-items-center">
@@ -154,22 +152,14 @@
           <img src="assets/tentang.jpg" alt="Tentang desa" class="img-fluid rounded shadow hover-zoom" />
         </div>
         <div class="col-md-8" data-aos="zoom-in-up" data-aos-duration="1000">
-          <p>
-            <strong>Desa Sukamaju</strong> adalah sebuah desa fiktif yang terletak di kaki Gunung Arjuna, dikelilingi oleh hamparan sawah hijau dan sungai yang jernih. Masyarakatnya hidup harmonis, menjunjung tinggi nilai kebersamaan dan kearifan lokal.
-          </p>
-          <p>
-            Desa ini dikenal dengan potensi pertaniannya, terutama dalam budidaya padi organik dan kopi pegunungan. Selain itu, kerajinan tangan seperti anyaman bambu dan batik tulis menjadi warisan budaya yang terus dilestarikan.
-          </p>
-          <p>
-            Setiap tahun, Desa Sukamaju mengadakan <em>Festival Panen Raya</em> yang menjadi daya tarik wisatawan dari berbagai daerah. Dengan udara sejuk, pemandangan asri, dan keramahan penduduknya, desa ini adalah gambaran sempurna kehidupan yang damai dan penuh makna.
-          </p>
+          <p><strong>Desa Sukamaju</strong> adalah sebuah desa fiktif yang terletak di kaki Gunung Arjuna, dikelilingi oleh hamparan sawah hijau dan sungai yang jernih. Masyarakatnya hidup harmonis, menjunjung tinggi nilai kebersamaan dan kearifan lokal.</p>
+          <p>Desa ini dikenal dengan potensi pertaniannya, terutama dalam budidaya padi organik dan kopi pegunungan. Selain itu, kerajinan tangan seperti anyaman bambu dan batik tulis menjadi warisan budaya yang terus dilestarikan.</p>
+          <p>Setiap tahun, Desa Sukamaju mengadakan <em>Festival Panen Raya</em> yang menjadi daya tarik wisatawan dari berbagai daerah. Dengan udara sejuk, pemandangan asri, dan keramahan penduduknya, desa ini adalah gambaran sempurna kehidupan yang damai dan penuh makna.</p>
         </div>
       </div>
     </div>
-    <!-- Tentang Desa end-->
 
-
-    <!--Footer-->
+    <!-- Footer -->
     <footer class="bg-dark text-light text-center py-3 mt-5">
       <p class="mb-1">&copy; 2025 Desa Kami. All rights reserved.</p>
       <p class="mb-0">
@@ -179,9 +169,9 @@
       </p>
     </footer>
 
-    <!--Bootstrap & aos Script-->
-    <script src="bootstrap-5.3.7-dist/js/bootstrap.bundle.min.js"></script>
-    <script src="aos-master/dist/aos.js"></script>
+    <!-- Bootstrap JS + AOS JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
       AOS.init();
     </script>
