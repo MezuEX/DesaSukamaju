@@ -1,294 +1,193 @@
 <!doctype html>
+
 <html lang="id">
   <head>
-    <!-- ===================== Metadata dan Pengaturan Awal ===================== -->
-    <!-- Mengatur karakter encoding dan tampilan responsive -->
+    <!-- ================== METADATA DAN LINK EKSTERNAL ================== -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Desa Sukamaju</title>
+    <title>Desa Sukamaju</title><!-- Bootstrap CSS untuk layout responsif -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- AOS CSS untuk animasi saat scroll -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<!-- Font Awesome untuk ikon sosial media dan dekoratif -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+<!-- Google Fonts (Poppins) untuk tampilan font modern -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="CSS/style.css">
 
-    <!-- ===================== Link ke Library Eksternal ===================== -->
-    <!-- Bootstrap: Framework CSS untuk desain responsif -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- AOS (Animate On Scroll): Efek animasi saat scroll -->
-    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-    <!-- Font Awesome: Ikon sosial media dan ikon dekoratif -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
-    <!-- Google Fonts: Menggunakan font Poppins -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-
-    <!-- ===================== CSS Internal (Custom Styling) ===================== -->
-    <style>
-      /* ===== Variabel warna global ===== */
-      :root {
-        --primary: #4CAF50;
-        --dark: #2c3e50;
-        --soft-gray: #f9f9f9;
-        --accent: #3e9e42;
-      }
-
-      /* ===== Reset & Global Styling ===== */
-      *, *::before, *::after {
-        box-sizing: border-box;
-      }
-
-      html, body {
-        scroll-behavior: smooth;
-        font-family: 'Poppins', sans-serif;
-        background-color: var(--soft-gray);
-        color: #333;
-        max-width: 100%;
-        overflow-x: hidden;
-      }
-
-      img {
-        max-width: 100%;
-        height: auto;
-      }
-
-      /* ===== Navbar ===== */
-      .navbar {
-        transition: top 0.3s ease;
-        background-color: white !important;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      }
-
-      .navbar .nav-link {
-        color: var(--dark) !important;
-        font-weight: 500;
-      }
-
-      .navbar-brand {
-        font-weight: 600;
-        color: var(--primary) !important;
-      }
-
-      /* ===== Tombol utama ===== */
-      .btn-success {
-        background-color: var(--primary);
-        border: none;
-      }
-
-      .btn-success:hover {
-        background-color: var(--accent);
-        box-shadow: 0 0 15px rgba(0,0,0,0.2);
-      }
-
-      /* ===== Carousel Hero Section ===== */
-      .carousel-item img {
-        height: 100vh;
-        object-fit: cover;
-      }
-
-      .carousel-overlay {
-        position: absolute;
-        top: 0; left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0,0,0,0.3);
-        z-index: 1;
-      }
-
-      .carousel-caption-custom {
-        z-index: 2;
-        background-color: rgba(0,0,0,0.5);
-        padding: 2rem;
-        border-radius: 1rem;
-      }
-
-      .text-shadow {
-        text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
-      }
-
-      /* Efek hover pada gambar */
-      .hover-zoom {
-        transition: transform 0.3s ease;
-      }
-
-      .hover-zoom:hover {
-        transform: scale(1.05);
-      }
-
-      /* ===== Section ===== */
-      .section {
-        padding: 60px 0;
-      }
-
-      /* ===== Progress Bar Data Penduduk ===== */
-      .progress {
-        height: 30px;
-        background-color: #e0e0e0;
-        border-radius: 30px;
-        overflow: hidden;
-      }
-
-      .progress-bar {
-        padding-left: 15px;
-        line-height: 30px;
-        font-weight: 500;
-        transition: width 0.8s ease;
-      }
-
-      /* ===== Footer ===== */
-      footer {
-        background-color: #222;
-        color: #ccc;
-      }
-
-      footer a {
-        color: #ccc;
-        transition: 0.3s;
-      }
-
-      footer a:hover {
-        color: var(--primary);
-      }
-
-      /* ===== Responsif (Untuk layar kecil) ===== */
-      @media(max-width: 768px) {
-        .carousel-caption-custom h1 {
-          font-size: 1.75rem;
-        }
-        .carousel-caption-custom p {
-          font-size: 1rem;
-        }
-      }
-    </style>
-  </head>
-
-  <body>
-    <!-- ===================== Navbar Utama ===================== -->
+  </head>  <body>
+    <!-- ================== NAVBAR ================== -->
     <nav class="navbar navbar-expand-lg fixed-top">
       <div class="container">
-        <!-- Logo dan nama desa -->
         <a class="navbar-brand" href="#"><i class="fa-solid fa-tree me-2"></i>Desa Sukamaju</a>
-
-        <!-- Tombol toggle menu pada layar kecil -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-          data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-          aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
           <span class="navbar-toggler-icon"></span>
         </button>
-
-        <!-- Menu navigasi -->
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item"><a class="nav-link active" href="#">Beranda</a></li>
             <li class="nav-item"><a class="nav-link" href="#about">Tentang</a></li>
+            <li class="nav-item"><a class="nav-link" href="#profil">Profil Desa</a></li>
             <li class="nav-item"><a class="nav-link" href="#data">Data</a></li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Informasi</a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#contact">Kontak</a></li>
-                <li><a class="dropdown-item" href="https://maps.google.com">Maps</a></li>
-              </ul>
-            </li>
+            <li class="nav-item"><a class="nav-link" href="#datadesa">Transparansi</a></li>
           </ul>
         </div>
       </div>
-    </nav>
+    </nav><!-- ================== HERO SECTION ================== -->
+<div id="carouselExampleFade" class="carousel slide carousel-fade position-relative" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active"><img src="assets/fotodesa1.jpg" class="d-block w-100" alt="Foto Desa 1"></div>
+    <div class="carousel-item"><img src="assets/fotodesa2.jpg" class="d-block w-100" alt="Foto Desa 2"></div>
+    <div class="carousel-item"><img src="assets/fotodesa3.jpg" class="d-block w-100" alt="Foto Desa 3"></div>
+  </div>
+  <div class="carousel-overlay"></div>
+  <div class="position-absolute top-50 start-50 translate-middle text-white text-center carousel-caption-custom">
+    <h1 class="fw-bold text-shadow">Selamat Datang di Sukamaju</h1>
+    <p>Alam yang asri, budaya yang lestari</p>
+    <a href="#about" class="btn btn-success mt-3 px-4 py-2">Jelajahi Desa</a>
+  </div>
+</div>
 
-    <!-- ===================== Hero Section / Carousel Gambar ===================== -->
-    <div id="carouselExampleFade" class="carousel slide carousel-fade position-relative" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <!-- Gambar slide 1 -->
-        <div class="carousel-item active">
-          <img src="assets/fotodesa1.jpg" class="d-block w-100" alt="Foto Desa 1" />
-        </div>
-        <!-- Gambar slide 2 -->
-        <div class="carousel-item">
-          <img src="assets/fotodesa2.jpg" class="d-block w-100" alt="Foto Desa 2" />
-        </div>
-        <!-- Gambar slide 3 -->
-        <div class="carousel-item">
-          <img src="assets/fotodesa3.jpg" class="d-block w-100" alt="Foto Desa 3" />
-        </div>
-      </div>
-
-      <!-- Overlay hitam transparan -->
-      <div class="carousel-overlay"></div>
-
-      <!-- Teks selamat datang -->
-      <div class="position-absolute top-50 start-50 translate-middle text-white text-center carousel-caption-custom">
-        <h1 class="fw-bold text-shadow" data-aos="zoom-in">Selamat Datang di Sukamaju</h1>
-        <p>Alam yang asri, budaya yang lestari</p>
-        <a href="#about" class="btn btn-success mt-3 px-4 py-2">Jelajahi Desa</a>
-      </div>
-
-      <!-- Tombol navigasi carousel -->
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon"></span>
-        <span class="visually-hidden">Sebelumnya</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-        <span class="carousel-control-next-icon"></span>
-        <span class="visually-hidden">Berikutnya</span>
-      </button>
+<!-- ================== ABOUT SECTION ================== -->
+<section id="about" class="section container">
+  <h2 class="text-center">Tentang Desa Kami</h2>
+  <div class="row align-items-center content-box" data-aos="fade-up">
+    <div class="col-md-5 mb-4 mb-md-0">
+      <img src="assets/tentang.jpg" class="img-fluid rounded shadow hover-zoom" alt="Tentang Desa">
     </div>
+    <div class="col-md-7">
+      <p><strong>Desa Sukamaju</strong> adalah desa fiktif di kaki Gunung Arjuna yang terkenal akan keindahan alam dan keharmonisan masyarakatnya...</p>
+    </div>
+  </div>
+</section>
 
-    <!-- ===================== Tentang Desa ===================== -->
-    <section id="about" class="section container">
-      <h2 class="text-center mb-4" data-aos="zoom-in">Tentang Desa Kami</h2>
-      <div class="row align-items-center">
-        <!-- Gambar ilustrasi -->
-        <div class="col-md-5 mb-4 mb-md-0" data-aos="fade-up">
-          <img src="assets/tentang.jpg" class="img-fluid rounded shadow hover-zoom mx-auto d-block" alt="Tentang Desa">
-        </div>
-        <!-- Deskripsi desa -->
-        <div class="col-md-7" data-aos="fade-left">
-          <p><strong>Desa Sukamaju</strong> adalah desa fiktif di kaki Gunung Arjuna yang terkenal akan keindahan alam dan keharmonisan masyarakatnya...</p>
-        </div>
+<!-- ================== PROFIL DESA ================== -->
+<section id="profil" class="section container">
+  <h2 class="text-center">Profil Desa</h2>
+
+  <div class="content-box mb-4" data-aos="fade-up">
+    <h4>Sejarah Desa</h4>
+    <p>Desa Sukamaju berdiri sejak awal abad ke-20 sebagai pemukiman petani kopi dan teh di lereng Gunung Arjuna...</p>
+  </div>
+
+  <div class="content-box mb-4" data-aos="fade-up" data-aos-delay="100">
+    <h4>Visi & Misi</h4>
+    <p><strong>Visi:</strong> Menjadi desa mandiri, lestari, dan maju berbasis potensi lokal dan teknologi.</p>
+    <p><strong>Misi:</strong></p>
+    <ul>
+      <li>Meningkatkan kualitas hidup warga melalui pendidikan dan kesehatan.</li>
+      <li>Mendorong kemandirian ekonomi lewat UMKM dan pertanian modern.</li>
+      <li>Melestarikan lingkungan dan budaya lokal.</li>
+    </ul>
+  </div>
+
+  <div class="content-box mb-4" data-aos="fade-up" data-aos-delay="200">
+    <h4>Struktur Organisasi</h4>
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped">
+        <thead class="table-success text-center">
+          <tr><th>Jabatan</th><th>Nama</th><th>Tugas Pokok</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Kepala Desa</td><td>Andika Wijaya</td><td>Menetapkan arah kebijakan pembangunan desa.</td></tr>
+          <tr><td>Sekretaris Desa</td><td>Putri Lestari</td><td>Mengelola administrasi desa.</td></tr>
+          <tr><td>Kaur Keuangan</td><td>Budi Hartono</td><td>Mengelola keuangan dan anggaran desa.</td></tr>
+          <tr><td>Kaur Umum</td><td>Siti Ramadhani</td><td>Menangani surat-menyurat dan administrasi umum.</td></tr>
+          <tr><td>Kasi Pemerintahan</td><td>Agus Prasetyo</td><td>Melaksanakan urusan pemerintahan desa.</td></tr>
+          <tr><td>Kasi Kesejahteraan</td><td>Yuliana Sari</td><td>Menjalankan program sosial desa.</td></tr>
+          <tr><td>Kasi Pelayanan</td><td>Rizky Maulana</td><td>Melayani kebutuhan administrasi masyarakat.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="content-box" data-aos="fade-up" data-aos-delay="300">
+    <h4>Geografis & Demografi</h4>
+    <p>Desa Sukamaju memiliki luas wilayah ±12 km² dengan jumlah penduduk sekitar 75.000 jiwa...</p>
+    <ul>
+      <li><strong>Peta Desa:</strong> <a href="assets/peta-desa.jpg" target="_blank">Lihat Peta</a></li>
+      <li><strong>Pembagian Wilayah:</strong> 5 Dusun, 15 RT, dan 5 RW</li>
+      <li><strong>Mata Pencaharian:</strong> Pertanian, peternakan, kerajinan, pariwisata</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================== DATA PENDUDUK ================== -->
+<section id="data" class="section container">
+  <h2 class="text-center">Data Jumlah Penduduk</h2>
+  <p class="text-center mb-4">Perkembangan penduduk Desa Sukamaju dari 2021–2024</p>
+  <div class="content-box">
+    <div class="mb-3"><div class="progress"><div class="progress-bar bg-success" id="progress-2021"></div></div></div>
+    <div class="mb-3"><div class="progress"><div class="progress-bar bg-info" id="progress-2022"></div></div></div>
+    <div class="mb-3"><div class="progress"><div class="progress-bar bg-warning" id="progress-2023"></div></div></div>
+    <div class="mb-3"><div class="progress"><div class="progress-bar bg-danger" id="progress-2024"></div></div></div>
+  </div>
+</section>
+
+<!-- ================== DATA DESA DETAIL ================== -->
+<section id="datadesa" class="section container">
+  <h2 class="text-center">Transparansi Desa</h2>
+  <div class="row g-4">
+    <div class="col-md-6" data-aos="fade-up">
+      <div class="content-box h-100">
+        <h5 class="mb-3">Statistik Penduduk</h5>
+        <ul>
+          <li><strong>Jenis Kelamin:</strong> 49% laki-laki, 51% perempuan</li>
+          <li><strong>Usia Produktif:</strong> 60% (15–64 tahun)</li>
+          <li><strong>Pendidikan:</strong> 30% SD, 35% SMP, 25% SMA, 10% Perguruan Tinggi</li>
+          <li><strong>Pekerjaan:</strong> 45% petani, 20% pedagang, 15% buruh, 20% lainnya</li>
+        </ul>
       </div>
-    </section>
-
-    <!-- ===================== Data Jumlah Penduduk ===================== -->
-    <section id="data" class="section container">
-      <h2 class="text-center mb-4"  data-aos="zoom-in" data-aos-delay="80">Data Jumlah Penduduk</h2>
-      <p class="text-center mb-4"  data-aos="zoom-in" data-aos-delay='180'>Perkembangan penduduk Desa Sukamaju dari 2021–2024</p>
-
-      <!-- Bar data penduduk per tahun -->
-      <div class="progress mb-3" data-aos="fade-right"><div class="progress-bar bg-success" id="progress-2021"></div></div>
-      <div class="progress mb-3" data-aos="fade-right" data-aos-delay="80"><div class="progress-bar bg-info" id="progress-2022"></div></div>
-      <div class="progress mb-3" data-aos="fade-right" data-aos-delay="180"><div class="progress-bar bg-warning" id="progress-2023"></div></div>
-      <div class="progress mb-3" data-aos="fade-right" data-aos-delay="280"><div class="progress-bar bg-danger" id="progress-2024"></div></div>
-    </section>
-
-    <!-- ===================== Footer ===================== -->
-    <footer class="text-center py-4">
-      <p class="mb-2">&copy; 2025 Desa Sukamaju. All rights reserved.</p>
-      <div id="contact">
-        <!-- Ikon sosial media -->
-        <a href="#" class="me-3"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" class="me-3"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+      <div class="content-box h-100">
+        <h5 class="mb-3">Data Keluarga Miskin</h5>
+        <p>Jumlah rumah tangga pra-sejahtera tercatat sebanyak <strong>1.235 KK</strong> yang tersebar di 5 dusun utama.</p>
       </div>
-    </footer>
+    </div>
+    <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+      <div class="content-box h-100">
+        <h5 class="mb-3">Data Bantuan Sosial</h5>
+        <ul>
+          <li><strong>PKH:</strong> 850 penerima</li>
+          <li><strong>BLT Dana Desa:</strong> 430 penerima</li>
+          <li><strong>Sembako:</strong> 670 keluarga</li>
+          <li><strong>Beasiswa miskin:</strong> 95 pelajar</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+      <div class="content-box h-100">
+        <h5 class="mb-3">Data Pembangunan Fisik</h5>
+        <ul>
+          <li><strong>Jalan Rabat Beton:</strong> 7.5 km dibangun tahun 2023</li>
+          <li><strong>Jembatan Desa:</strong> 3 unit selesai tahun 2022</li>
+          <li><strong>Saluran Irigasi:</strong> 12 titik diperbaiki</li>
+          <li><strong>Posyandu & Balai Dusun:</strong> 4 bangunan direnovasi</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- ===================== Script Eksternal & Interaktif ===================== -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script>
-      // Inisialisasi animasi AOS
-      AOS.init();
+<!-- ================== FOOTER ================== -->
+<footer class="text-center py-4">
+  <p class="mb-2">&copy; 2025 Desa Sukamaju. All rights reserved.</p>
+  <div id="contact">
+    <a href="#" class="me-3"><i class="fab fa-facebook-f"></i></a>
+    <a href="#" class="me-3"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-whatsapp"></i></a>
+  </div>
+</footer>
 
-      // Data jumlah penduduk
-      const pendudukData = {
-        2021: 20000,
-        2022: 35000,
-        2023: 50000,
-        2024: 75000
-      };
+<!-- ================== SCRIPT ================== -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script src="JS/script.js"></script>
+<script>
+  // Inisialisasi animasi scroll AOS
+  AOS.init();
+</script>
 
-      // Hitung nilai maksimum dari seluruh tahun
-      const max = Math.max(...Object.values(pendudukData));
-
-      // Render progress bar berdasarkan data
-      for (const [tahun, jumlah] of Object.entries(pendudukData)) {
-        const percent = Math.round((jumlah / max) * 100);
-        const bar = document.getElementById(`progress-${tahun}`);
-        bar.style.width = percent + "%";
-        bar.textContent = `${tahun}: ${jumlah.toLocaleString()} (${percent}%)`;
-      }
-    </script>
-  </body>
-</html>
+</body>
+</htnl>
