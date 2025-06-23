@@ -11,8 +11,9 @@ const max = Math.max(...Object.values(pendudukData));
 
 // Untuk setiap tahun, tampilkan bar dengan panjang sesuai persentase jumlah penduduk
 for (const [tahun, jumlah] of Object.entries(pendudukData)) {
-  const percent = Math.round((jumlah / max) * 100); // Hitung persentase
+  const percent = Math.round((jumlah / max) * 100);
   const bar = document.getElementById(`progress-${tahun}`);
+  if (!bar) continue;
 
   // Buat label tahun dan jumlah
   const label = document.createElement('div');
@@ -20,9 +21,13 @@ for (const [tahun, jumlah] of Object.entries(pendudukData)) {
   label.textContent = `${tahun}: ${jumlah.toLocaleString()} (${percent}%)`;
 
   // Sisipkan label di atas bar
-  bar.parentElement.parentElement.insertBefore(label, bar.parentElement);
+  const wrapper = bar.parentElement.parentElement;
+  wrapper.insertBefore(label, bar.parentElement);
 
-  // Atur lebar bar
+  // Tambahkan animasi scroll AOS (opsional)
+  wrapper.setAttribute('data-aos', 'fade-up');
+
+  // Atur lebar bar dan isi teks
   bar.style.width = percent + "%";
   bar.textContent = '';
 }

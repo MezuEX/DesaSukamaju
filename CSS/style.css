@@ -63,12 +63,31 @@ img { max-width: 100%; height: auto; }
 }
 .content-box:hover { transform: translateY(-5px); }
 
-/* Progress bar */
+/* Efek transisi halus pada progress bar */
 .progress-bar {
-  font-size: 0.95rem;
-  color: white;
-  border-radius: 30px;
-  padding-left: 20px;
+  transition: width 1s ease-in-out;
+}
+
+/* Agar teks progress bar tetap terbaca di warna terang */
+.progress-bar.bg-warning,
+.progress-bar.bg-info,
+.progress-bar.bg-light {
+  color: #000;
+}
+
+/* Hover efek nav-link */
+.navbar .nav-link:hover {
+  color: var(--primary) !important;
+  text-decoration: underline;
+}
+
+/* Hover pointer pada tombol */
+.btn-success {
+  cursor: pointer;
+}
+
+canvas {
+  min-height: 250px;
 }
 
 /* Footer */
@@ -80,4 +99,5 @@ footer a:hover { color: var(--primary); }
 @media(max-width: 768px) {
   .carousel-caption-custom h1 { font-size: 1.75rem; }
   .carousel-caption-custom p { font-size: 1rem; }
+  #about img { display: block; margin: 0 auto 1rem; }
 }
