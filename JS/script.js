@@ -1,4 +1,6 @@
-// Data jumlah penduduk per tahun
+// ===============================
+// Data Jumlah Penduduk per Tahun
+// ===============================
 const pendudukData = {
   2021: 20000,
   2022: 35000,
@@ -6,28 +8,30 @@ const pendudukData = {
   2024: 75000
 };
 
-// Ambil nilai terbesar dari data sebagai referensi 100%
+// Cari nilai maksimum sebagai acuan 100%
 const max = Math.max(...Object.values(pendudukData));
 
-// Untuk setiap tahun, tampilkan bar dengan panjang sesuai persentase jumlah penduduk
+// Loop untuk membuat dan mengatur progress bar tiap tahun
 for (const [tahun, jumlah] of Object.entries(pendudukData)) {
   const percent = Math.round((jumlah / max) * 100);
   const bar = document.getElementById(`progress-${tahun}`);
-  if (!bar) continue;
+  if (!bar) continue; // Lewati jika elemen tidak ditemukan
 
-  // Buat label tahun dan jumlah
+  // Buat label keterangan jumlah penduduk per tahun
   const label = document.createElement('div');
   label.className = 'mb-1 fw-medium';
   label.textContent = `${tahun}: ${jumlah.toLocaleString()} (${percent}%)`;
 
-  // Sisipkan label di atas bar
+  // Sisipkan label sebelum elemen progress bar
   const wrapper = bar.parentElement.parentElement;
   wrapper.insertBefore(label, bar.parentElement);
 
-  // Tambahkan animasi scroll AOS (opsional)
+  // Tambahkan animasi scroll
   wrapper.setAttribute('data-aos', 'fade-up');
 
-  // Atur lebar bar dan isi teks
+  // Atur lebar progress bar sesuai persentase
   bar.style.width = percent + "%";
+
+  // Kosongkan teks dalam bar agar tidak menimpa label
   bar.textContent = '';
 }
