@@ -35,3 +35,12 @@ for (const [tahun, jumlah] of Object.entries(pendudukData)) {
   // Kosongkan teks dalam bar agar tidak menimpa label
   bar.textContent = '';
 }
+
+//membuka window baru saat di click
+function openWindow(url) {
+    window.open(
+      url,
+      '_blank',
+      'width=1000,height=700,top=100,left=200,toolbar=no,menubar=no,scrollbars=yes,resizable=yes'
+    );
+  }
