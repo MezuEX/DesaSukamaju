@@ -179,10 +179,47 @@
     <section id="data" class="section container">
         <h2 class="text-center">Data Jumlah Penduduk</h2>
         <div class="content-box">
-            <div class="mb-3"><div class="progress"><div class="progress-bar bg-success" id="progress-2021"></div></div></div>
-            <div class="mb-3"><div class="progress"><div class="progress-bar bg-info" id="progress-2022"></div></div></div>
-            <div class="mb-3"><div class="progress"><div class="progress-bar bg-warning" id="progress-2023"></div></div></div>
-            <div class="mb-3"><div class="progress"><div class="progress-bar bg-danger" id="progress-2024"></div></div></div>
+            <div class="progress-container">
+                <div class="mb-4">
+                    <div class="d-flex justify-content-between mb-2">
+                        <span class="fw-medium">2021</span>
+                        <span id="label-2021" class="fw-medium"></span>
+                    </div>
+                    <div class="progress" style="height: 25px;">
+                        <div id="progress-2021" class="progress-bar bg-success"></div>
+                    </div>
+                </div>
+                
+                <div class="mb-4">
+                    <div class="d-flex justify-content-between mb-2">
+                        <span class="fw-medium">2022</span>
+                        <span id="label-2022" class="fw-medium"></span>
+                    </div>
+                    <div class="progress" style="height: 25px;">
+                        <div id="progress-2022" class="progress-bar bg-info"></div>
+                    </div>
+                </div>
+                
+                <div class="mb-4">
+                    <div class="d-flex justify-content-between mb-2">
+                        <span class="fw-medium">2023</span>
+                        <span id="label-2023" class="fw-medium"></span>
+                    </div>
+                    <div class="progress" style="height: 25px;">
+                        <div id="progress-2023" class="progress-bar bg-warning"></div>
+                    </div>
+                </div>
+                
+                <div class="mb-4">
+                    <div class="d-flex justify-content-between mb-2">
+                        <span class="fw-medium">2024</span>
+                        <span id="label-2024" class="fw-medium"></span>
+                    </div>
+                    <div class="progress" style="height: 25px;">
+                        <div id="progress-2024" class="progress-bar bg-danger"></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -314,6 +351,9 @@
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
         AOS.init();
+        document.addEventListener('DOMContentLoaded', function() {
+            initProgressBars();
+        });
     </script>
 </body>
 </html>

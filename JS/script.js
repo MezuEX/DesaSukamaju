@@ -20,28 +20,35 @@ const maxPenduduk = Math.max(...Object.values(pendudukData));
  * Fungsi untuk menginisialisasi progress bar penduduk
  */
 function initProgressBars() {
-    // Loop melalui data penduduk
+    console.log("Menginisialisasi progress bars...");
+    
     for (const [tahun, jumlah] of Object.entries(pendudukData)) {
-        // Hitung persentase
         const percent = Math.round((jumlah / maxPenduduk) * 100);
         const progressBar = document.getElementById(`progress-${tahun}`);
+        const labelElement = document.getElementById(`label-${tahun}`);
+
+        if (!progressBar) {
+            console.error(`Element progress-${tahun} tidak ditemukan!`);
+            continue;
+        }
+
+        if (!labelElement) {
+            console.error(`Element label-${tahun} tidak ditemukan!`);
+            continue;
+        }
+
+        // Format angka dengan separator ribuan
+        const formattedJumlah = new Intl.NumberFormat('id-ID').format(jumlah);
         
-        // Jika elemen tidak ditemukan, lewati iterasi ini
-        if (!progressBar) continue;
-
-        // Buat label informasi
-        const label = createPopulationLabel(tahun, jumlah, percent);
+        // Set label
+        labelElement.textContent = `${formattedJumlah} jiwa (${percent}%)`;
         
-        // Tempatkan label sebelum progress bar
-        const wrapper = progressBar.parentElement.parentElement;
-        wrapper.insertBefore(label, progressBar.parentElement);
-
-        // Tambahkan efek animasi
-        wrapper.setAttribute('data-aos', 'fade-up');
-
-        // Atur lebar progress bar
-        progressBar.style.width = `${percent}%`;
-        progressBar.textContent = ''; // Kosongkan teks default
+        // Animasikan progress bar
+        setTimeout(() => {
+            progressBar.style.width = `${percent}%`;
+            progressBar.setAttribute('aria-valuenow', percent);
+            progressBar.textContent = `${percent}%`;
+        }, 300 * (tahun - 2021)); // Delay animasi bertahap
     }
 }
 
@@ -81,3 +88,35 @@ window.openWindow = function(url) {
     
     window.open(url, '_blank', windowFeatures);
 };
+
+/**
+ * Fungsi untuk mengecek status surat
+ */
+function cekStatusSurat() {
+    const kodeInput = document.getElementById('kodeTracking');
+    const hasilElement = document.getElementById('hasilTracking');
+    const kode = kodeInput.value.trim();
+
+    if (!kode) {
+        hasilElement.textContent = 'Masukkan kode pengajuan yang valid.';
+        hasilElement.classList.remove('text-success');
+        hasilElement.classList.add('text-danger');
+        return;
+    }
+
+    // Simulasi pencocokan kode tracking
+    if (kode === 'SUK-20240623-001') {
+        hasilElement.textContent = 'Status: Selesai dan Siap Diambil di Kantor Desa.';
+        hasilElement.classList.remove('text-danger');
+        hasilElement.classList.add('text-success');
+    } else {
+        hasilElement.textContent = 'Kode tidak ditemukan. Periksa kembali.';
+        hasilElement.classList.remove('text-success');
+        hasilElement.classList.add('text-danger');
+    }
+}
+
+// Inisialisasi saat dokumen siap
+document.addEventListener('DOMContentLoaded', function() {
+    initProgressBars();
+});
