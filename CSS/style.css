@@ -1,167 +1,252 @@
-/* ===========================
-   Variabel Warna Utama
-=========================== */
+/* =============================================
+   VARIABEL GLOBAL
+   ============================================= */
 :root {
-  --primary: #4CAF50;
-  --dark: #2c3e50;
-  --soft-gray: #f9f9f9;
-  --accent: #3e9e42;
+    --primary: #4CAF50;        /* Warna utama hijau */
+    --dark: #2c3e50;          /* Warna gelap untuk teks */
+    --soft-gray: #f9f9f9;      /* Warna background */
+    --accent: #3e9e42;         /* Warna aksen hijau lebih gelap */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);  /* Shadow kecil */
+    --shadow-md: 0 4px 15px rgba(0, 0, 0, 0.08); /* Shadow medium */
+    --shadow-lg: 0 0 15px rgba(0, 0, 0, 0.2);    /* Shadow besar */
 }
 
-/* ===========================
-   Reset & Dasar
-=========================== */
-*, *::before, *::after {
-  box-sizing: border-box;
+/* =============================================
+   RESET & DASAR
+   ============================================= */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-html, body {
-  scroll-behavior: smooth;
-  font-family: 'Poppins', sans-serif;
-  background-color: var(--soft-gray);
-  color: #333;
-  overflow-x: hidden;
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--soft-gray);
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden;
 }
 
 img {
-  max-width: 100%;
-  height: auto;
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
-/* ===========================
-   Navbar
-=========================== */
+/* =============================================
+   KOMPONEN NAVBAR
+   ============================================= */
 .navbar {
-  background-color: white !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-.navbar .nav-link {
-  color: var(--dark) !important;
-  font-weight: 500;
-}
-
-.navbar .nav-link:hover {
-  color: var(--primary) !important;
-  text-decoration: underline;
+    background-color: white !important;
+    box-shadow: var(--shadow-sm);
+    padding: 0.8rem 0;
 }
 
 .navbar-brand {
-  font-weight: 600;
-  color: var(--primary) !important;
+    font-weight: 600;
+    color: var(--primary) !important;
+    font-size: 1.25rem;
 }
 
-/* ===========================
-   Tombol
-=========================== */
+.navbar .nav-link {
+    color: var(--dark) !important;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+    color: var(--primary) !important;
+    text-decoration: underline;
+}
+
+/* =============================================
+   KOMPONEN TOMBOL
+   ============================================= */
+.btn {
+    transition: all 0.3s ease;
+    font-weight: 500;
+    padding: 0.5rem 1.5rem;
+}
+
 .btn-success {
-  background-color: var(--primary);
-  border: none;
-  cursor: pointer;
+    background-color: var(--primary);
+    border: none;
+    border-radius: 0.375rem;
 }
 
-.btn-success:hover {
-  background-color: var(--accent);
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+.btn-success:hover,
+.btn-success:focus {
+    background-color: var(--accent);
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
 }
 
-/* ===========================
-   Carousel / Hero
-=========================== */
+/* =============================================
+   KOMPONEN CAROUSEL/HERO
+   ============================================= */
+.carousel {
+    position: relative;
+}
+
 .carousel-item img {
-  height: 100vh;
-  object-fit: cover;
+    height: 100vh;
+    object-fit: cover;
+    object-position: center;
 }
 
 .carousel-overlay {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
-  z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1;
 }
 
 .carousel-caption-custom {
-  z-index: 2;
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 2rem;
-  border-radius: 1rem;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+    border-radius: 1rem;
+    width: 80%;
+    max-width: 800px;
 }
 
 .text-shadow {
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
 }
 
-/* ===========================
-   Section & Box
-=========================== */
+/* =============================================
+   SECTION & KONTEN BOX
+   ============================================= */
 .section {
-  padding: 60px 0;
+    padding: 4rem 0;
 }
 
 .content-box {
-  background-color: white;
-  border-radius: 12px;
-  padding: 2rem;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease;
+    background-color: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: var(--shadow-md);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 1.5rem;
 }
 
 .content-box:hover {
-  transform: translateY(-5px);
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* ===========================
-   Progress Bar
-=========================== */
+/* =============================================
+   PROGRESS BAR
+   ============================================= */
+.progress {
+    height: 1.5rem;
+    border-radius: 0.75rem;
+    background-color: #e9ecef;
+    overflow: hidden;
+}
+
 .progress-bar {
-  transition: width 1s ease-in-out;
+    transition: width 1s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 600;
 }
 
+/* Warna progress bar alternatif */
 .progress-bar.bg-warning,
 .progress-bar.bg-info,
 .progress-bar.bg-light {
-  color: #000;
+    color: #000;
 }
 
-/* ===========================
-   Canvas Chart.js
-=========================== */
+/* =============================================
+   CHART.JS CANVAS
+   ============================================= */
 canvas {
-  min-height: 250px;
+    min-height: 250px;
+    width: 100% !important;
+    height: auto !important;
 }
 
-/* ===========================
-   Footer
-=========================== */
+/* =============================================
+   FOOTER
+   ============================================= */
 footer {
-  background-color: #222;
-  color: #ccc;
+    background-color: #222;
+    color: #ccc;
+    padding: 2rem 0;
+    text-align: center;
 }
 
 footer a {
-  color: #ccc;
-  transition: 0.3s;
+    color: #ccc;
+    transition: color 0.3s ease;
+    margin: 0 0.5rem;
+    font-size: 1.2rem;
 }
 
 footer a:hover {
-  color: var(--primary);
+    color: var(--primary);
+    text-decoration: none;
 }
 
-/* ===========================
-   Responsive
-=========================== */
+/* =============================================
+   RESPONSIVE DESIGN
+   ============================================= */
 @media (max-width: 768px) {
-  .carousel-caption-custom h1 {
-    font-size: 1.75rem;
-  }
+    /* Penyesuaian carousel untuk mobile */
+    .carousel-item img {
+        height: 60vh;
+    }
 
-  .carousel-caption-custom p {
-    font-size: 1rem;
-  }
+    .carousel-caption-custom {
+        width: 90%;
+        padding: 1rem;
+    }
 
-  #about img {
-    display: block;
-    margin: 0 auto 1rem;
-  }
+    .carousel-caption-custom h1 {
+        font-size: 1.75rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .carousel-caption-custom p {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    /* Penyesuaian layout untuk mobile */
+    .section {
+        padding: 2rem 0;
+    }
+
+    #about img {
+        display: block;
+        margin: 0 auto 1rem;
+        max-width: 150px;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-brand {
+        font-size: 1.1rem;
+    }
+    
+    .btn {
+        padding: 0.4rem 1.2rem;
+        font-size: 0.9rem;
+    }
 }
