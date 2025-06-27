@@ -105,6 +105,23 @@ textarea.form-control {
 }
 
 /* =============================================
+   ERROR MESSAGE STYLING
+   ============================================= */
+.invalid-feedback {
+    color: #d32f2f;
+    font-size: 0.9rem;
+    margin-top: 0.25rem;
+    display: none;
+}
+
+input.is-invalid,
+select.is-invalid,
+textarea.is-invalid {
+    border-color: #d32f2f;
+    box-shadow: 0 0 5px rgba(211, 47, 47, 0.3);
+}
+
+/* =============================================
    RESPONSIVE DESIGN
    ============================================= */
 @media (max-width: 768px) {
